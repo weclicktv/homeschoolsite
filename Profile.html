@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We Click TV Profile</title>
+    <style>
+        :root {
+            --color-background: #0f0f12;
+            --color-text-primary: #f0f0f0;
+            --color-text-secondary: #888;
+            --color-primary: #3381ff;
+            --font-family-sans-serif: "Poppins", -apple-system, sans-serif;
+            --navbar-height: 100px;
+            --container-width: 1200px;
+            --magnetic-transition: transform 0.2s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
+        
+        *, *::before, *::after { box-sizing: border-box; }
+        body { margin: 0; font-family: var(--font-family-sans-serif); background-color: var(--color-background); color: var(--color-text-primary); }
+        .content { min-height: 150vh; max-width: var(--container-width); margin: 0 auto; padding: calc(var(--navbar-height) + 0.1rem) 1.5rem; text-align: center; }
+        ul { list-style: none; margin: 0; padding: 0; }
+        a { text-decoration: none; color: var(--color-text-secondary); }
+
+        .navbar { height: var(--navbar-height); display: flex; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .navbar__container { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: var(--container-width); margin: 0 auto; padding: 0 1.5rem; }
+        .navbar__brand { font-size: 1.5rem; font-weight: 600; color: var(--color-text-primary); }
+        .navbar__nav { display: none; } /* Hidden on mobile */
+        
+        /* Mobile Hamburger Toggle */
+        .navbar__mobile-toggle { display: block; background: transparent; border: 0; cursor: pointer; color: var(--color-text-primary); z-index: 1002; }
+        .navbar__mobile-toggle svg { width: 24px; height: 24px; }
+        
+        /* Mobile slide-out menu pane */
+        .mobile-menu-pane {
+            position: fixed; top: 0; left: 0; z-index: 1001;
+            width: 80%; max-width: 300px; height: 100%;
+            background-color: #1a1a1f; padding: 1.5rem;
+            
+            /* Transform and transition for slide-in effect */
+            transform: translateX(-100%);
+            transition: transform 0.35s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+        .mobile-menu-pane.is-open {
+            transform: translateX(0);
+        }
+        .mobile-menu-pane .nav-list { display: flex; flex-direction: column; gap: 1rem; padding-top: 4rem; }
+        .mobile-menu-pane .nav-link { display: block; padding: 1rem 0; font-size: 1.25rem; font-weight: 500; color: var(--color-text-primary); }
+        .mobile-menu-pane .nav-link:hover { color: var(--color-primary); }
+
+        /* Desktop Styles */
+        @media (min-width: 992px) {
+            .navbar__mobile-toggle { display: none; }
+            .mobile-menu-pane { display: none; } /* Ensure it is hidden on desktop */
+            .navbar__nav { display: block; }
+            .nav-list { display: flex; align-items: center; gap: 2.5rem; }
+            .nav-link { display: inline-block; padding: 0.5rem; font-weight: 500; transition: var(--magnetic-transition); }
+            .nav-link:hover { color: var(--color-text-primary); }
+            
+            @media (prefers-reduced-motion: reduce) {
+                .nav-link { transition: none; }
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="navbar__container">
+            <a href="Homeschool.html" class="navbar__brand">We Click TV</a>
+            <nav class="navbar__nav" id="magnetic-nav">
+                <ul class="nav-list">
+                    <li><a href="#" class="nav-link">John</a></li><li><a href="#" class="nav-link">Jane</a></li><li><a href="Zek.html" target="_parent" class="nav-link">Zek</a></li><li><a href="#" class="nav-link">Zoe</a></li>
+                </ul>
+            </nav>
+            <button class="navbar__mobile-toggle" id="mobile-toggle" aria-label="Open Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+            </button>
+        </div>
+    </header>
+    
+    <div class="mobile-menu-pane" id="mobile-menu-pane"></div>
+    <main class="content">
+        
+<p><I>For I know the plans I have for you,” declares the Lord ,<p>“plans to prosper you and not to harm you, </p>
+<p>plans to give you hope and a future. </p>
+<p>Jeremiah 29:11</I></p>
+
+
+        <p><h4>WELCOME </h4></p>
+<p>We are a passionate family of 4 that appreciate what life has to offer. </p>
+<p>We are on YouTube for VIDEOS that feature different segments </p>
+<p>that each of the members of the family are zealous about - </p>
+<p>Monday Mood, Techie Tuesday, Wellness Wednesday, Travel Thursday & Fun Friday. </p>
+<p>We talk about Motherhood, Homeschooling, Household Tips & Budgets, Latest in Technologies & Gadgets.</p>
+<p>Our SHORTS provide inspiration and positive quotes for those </p>
+<p>who will spare their time on our works.</p>
+
+<p><h4>ETHOS</H4></p>
+<p>Together since 2006</p>
+<p>Lived in Malaysia for 7 years</p>
+<p>Homeschooling since 2015</p>
+<p>Son has Dyslexia with ADHD</p>
+<p>Daughter has JDM and RHD</p>
+<p><I>Inspiring & Educating through our experiences & trials</I></p> 
+
+<p><h4>CREDO</H4></p>
+<p><I>The Deeper the Roots</I></p>
+<p><I>The Stronger the Tree</I></p>
+<p><I>The Greater the Fruits</I></p>
+
+<p><h4>PATHOS</H4></p>
+<p><I>"Nothing in Life is to be feared</p>
+<p>It is only to be understood"</I></p>
+
+<p><h4>LOGOS</H4></p>
+<p><I>"We cannot solve our problems </p>
+<p>with the same thinking we used to create them."</I></p>
+
+<h3>| IKIGAI | KAIZEN | SHOSHIN |</h3>
+
+
+    </main>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const magneticNav = document.getElementById('magnetic-nav');
+        
+        const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (hasFinePointer && !prefersReducedMotion && magneticNav) {
+            const navLinks = magneticNav.querySelectorAll('.nav-link');
+            magneticNav.addEventListener('mousemove', (e) => {
+                const mouseX = e.clientX, mouseY = e.clientY;
+                navLinks.forEach(link => {
+                    const rect = link.getBoundingClientRect();
+                    const deltaX = mouseX - (rect.left + rect.width / 2);
+                    const deltaY = mouseY - (rect.top + rect.height / 2);
+                    link.style.transform = `translate(${deltaX * 0.4}px, ${deltaY * 0.4}px)`;
+                });
+            });
+            magneticNav.addEventListener('mouseleave', () => {
+                navLinks.forEach(link => link.style.transform = 'translate(0, 0)');
+            });
+        }
+        
+        // --- MOBILE MENU LOGIC ---
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenuPane = document.getElementById('mobile-menu-pane');
+        const mainDesktopNav = document.getElementById('magnetic-nav');
+        
+        if (mainDesktopNav && mobileToggle && mobileMenuPane) {
+            // Clone the nav for the mobile slide-out pane on load
+            mobileMenuPane.innerHTML = mainDesktopNav.innerHTML;
+
+            mobileToggle.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent the click from bubbling up to the document
+                mobileMenuPane.classList.toggle('is-open');
+            });
+            
+            // Close menu if clicking outside of it
+            document.addEventListener('click', (e) => {
+                // Check if the menu is open and if the click was outside the pane and not on the toggle
+                if (mobileMenuPane.classList.contains('is-open') && !mobileMenuPane.contains(e.target) && e.target !== mobileToggle) {
+                    mobileMenuPane.classList.remove('is-open');
+                }
+            });
+        }
+    });
+    </script>
+</body>
+</html>

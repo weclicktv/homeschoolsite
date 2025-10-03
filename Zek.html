@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zek's Homeschooling</title>
+    <style>
+        /* ==========================================================================
+           Styles for Demo Preview Only
+           ========================================================================== */
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* ==========================================================================
+           Step-by-Step List Component Styles - Copy from here
+           ========================================================================== */
+
+
+        .steps-template {
+            --steps-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            --primary-text-color: #228B22;
+            --secondary-text-color: #6c757d;
+            --accent-color: #228B22;
+            --line-color: #dee2e6;
+            --counter-bg-color: #fff;
+            --counter-text-color: var(--accent-color);
+            --counter-border-color: var(--accent-color);
+            --counter-size: 40px;
+            --line-width: 2px;
+
+            font-family: var(--steps-font-family);
+            color: var(--primary-text-color);
+            width: 100%;
+            max-width: 600px;
+        }
+        
+        .steps-template *,
+        .steps-template *::before,
+        .steps-template *::after {
+            box-sizing: border-box;
+        }
+        
+        .steps-template .steps-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .steps-template .steps-header h2 {
+            font-size: 2.25rem;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .steps-template .steps-list {
+            list-style: none;
+            padding-left: 0;
+            margin-left: 20px;
+            /* Creates the space for the counter and line */
+            padding-left: calc(var(--counter-size) + 20px); 
+            position: relative;
+            counter-reset: steps-counter; /* Initialize the counter */
+        }
+        
+        /* The connecting timeline */
+        .steps-template .steps-list::before {
+            content: '';
+            position: absolute;
+            left: calc(var(--counter-size) / 2);
+            top: 20px;
+            bottom: 20px;
+            width: var(--line-width);
+            background-color: var(--line-color);
+            transform: translateX(-50%);
+        }
+
+        .steps-template .steps-list-item {
+            position: relative;
+            padding-bottom: 2.5rem;
+        }
+        
+        /* Hide the final trailing padding */
+        .steps-template .steps-list-item:last-child {
+            padding-bottom: 0;
+        }
+
+        /* The custom number counter */
+        .steps-template .steps-list-item::before {
+            counter-increment: steps-counter; /* Increment the counter for each li */
+            content: counter(steps-counter); /* Display the counter value */
+            position: absolute;
+            left: calc(-1 * (var(--counter-size) + 20px)); /* Position it to the left */
+            top: -2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: var(--counter-size);
+            height: var(--counter-size);
+            border: var(--line-width) solid var(--counter-border-color);
+            border-radius: 50%;
+            background-color: var(--counter-bg-color);
+            color: var(--counter-text-color);
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .steps-template .steps-list-item h3 {
+            font-size: 1.25rem;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .steps-template .steps-list-item p {
+            margin: 0;
+            color: var(--secondary-text-color);
+            line-height: 1.6;
+        }
+	.space {
+	word-spacing: 30px;
+		}
+	}
+	
+    </style>
+</head>
+<body>
+
+<div class="steps-template">
+    <div class="steps-header">
+        <h2>Homeschooling</h2>
+    </div>
+
+    <ol class="steps-list">
+        <li class="steps-list-item">
+            <h3>English</h3>
+            
+	<h4><p><I><b>"To these four young men God gave knowledge and understanding of all kinds of 	literature and learning. And Daniel could understand visions and dreams of all kinds." Daniel 1:17</b></I></p></h4>
+	<p>Welcome to your favorite subject. You come a long way from not being able to know the phonetics to a bookworm & I could've been more proud. </p>
+</p>
+<h4><p class=".space"><a href="Zek_Literature.html"> Kinder </a>
+<a href="#"> Grade 1 </a>
+<a href="Zek_Literature.html" target="_parent"> Grade 2 </a>
+<a href="Zek_Literature.html" target="_parent"> Grade 3 </a>
+<a href="Zek_Literature.html" target="_parent"> Grade 4 </a>
+<a href="Zek_Literature.html" target="_parent"> Grade 5 </a>
+<a href="Zek_Literature.html" target="_parent"> Grade 6 </a></p>
+<a href="Zek_Literature.html" target="_parent"> Grade 7 </a>
+<a href="Zek_Literature.html" target="_parent"> Grade 8 </a>
+<a href="Zek_Literature.html" target="_parent"> Grade 9 </a>
+<a href="Zek_Literature.html" target="_parent"> Grade 10 </a>
+<a href="Zek_Literature.html" target="_parent"> Grade 11 </a>
+<a href="Zek_Literature.html" target="_parent"> Grade 12 </a>
+</p><h4>
+
+	<p><I><b>William Shakespeare's famous line, "All the world's a stage, and all the men and women merely players"</b></I></p>
+        </li>
+        <li class="steps-list-item">
+            <h3>Mathematics</h3>
+	<h4><p><I><b>"But as for you, continue in what you have learned and have become convinced of, because you know those from whom you learned it," 2 Timothy 3:14 </b></I></p></h4>      
+    	<p>Welcome to the subject that you're dreading not to open & I'm with you on this but as an academic such as yourself, I'm afraid you have to & I will be with you all the way together with Dad & Zoe. Ganbare!</p>
+
+<h4><p class=".space"><a href="#"> Kinder </a>
+<a href="#"> Grade 1 </a>
+<a href="#"> Grade 2 </a>
+<a href="#"> Grade 3 </a>
+<a href="#"> Grade 4 </a>
+<a href="#"> Grade 5 </a>
+<a href="#"> Grade 6 </a></p>
+<a href="#"> Grade 7 </a>
+<a href="#"> Grade 8 </a>
+<a href="#"> Grade 9 </a>
+<a href="#"> Grade 10 </a>
+<a href="#"> Grade 11 </a>
+<a href="#"> Grade 12 </a>
+</p><h4>	
+
+<p><I><b>"Logic will get you from A to B. Imagination will take you everywhere." Albert Einstein </b></I></p>
+	</li>
+         <li class="steps-list-item">
+            <h3>Science</h3>
+	<h4><p><I><b>"But since you excel in everything—in faith, in speech, in knowledge, in complete earnestness and in the love we have kindled in you —see that you also excel in this grace of giving." </b></I></p> <p><I><b> 2 Corinthians 8:7</b></I></p></h4>
+            <p>Welcome to your new learnings. Although, I'm not expecting you to be the new Sheldon Cooper or Leonard Hofstadter of your generation but I expect you to enjoy & don't forget to tell us about your new discovery.</p>
+	
+<h4><p class=".space"><a href="#"> Kinder </a>
+<a href="#"> Grade 1 </a>
+<a href="#"> Grade 2 </a>
+<a href="#"> Grade 3 </a>
+<a href="#"> Grade 4 </a>
+<a href="#"> Grade 5 </a>
+<a href="#"> Grade 6 </a></p>
+<a href="#"> Grade 7 </a>
+<a href="#"> Grade 8 </a>
+<a href="#"> Grade 9 </a>
+<a href="#"> Grade 10 </a>
+<a href="#"> Grade 11 </a>
+<a href="#"> Grade 12 </a>
+</p><h4>	
+<p><I><b>"If I have seen further than others, it is by standing upon the shoulders of giants," Sir Isaac Newton</b></I></p>
+        </li>
+         <li class="steps-list-item">
+            <h3>Social Studies</h3>
+	<h4><p><I><b>"The fear of the Lord is the beginning of knowledge, but fools despise wisdom and instruction."-Proverbs 1:7</b></I></p></h4>
+            <p>Welcome to your what we call in chess term "discovered check" subject. A continuation of Economics, on the subject that you're fond of recently. I hope & pray that you will continue to excel in it.</p>
+
+<h4><p class=".space"><a href="#"> Kinder </a>
+<a href="#"> Grade 1 </a>
+<a href="#"> Grade 2 </a>
+<a href="#"> Grade 3 </a>
+<a href="#"> Grade 4 </a>
+<a href="#"> Grade 5 </a>
+<a href="#"> Grade 6 </a></p>
+<a href="#"> Grade 7 </a>
+<a href="#"> Grade 8 </a>
+<a href="#"> Grade 9 </a>
+<a href="#"> Grade 10 </a>
+<a href="#"> Grade 11 </a>
+<a href="#"> Grade 12 </a>
+</p><h4>	
+
+<p><I><b>"Management is doing things right; leadership is doing the right things." Peter Drucker</b></I></p>
+        </li>
+<li class="steps-list-item">
+            <h3>Filipino</h3>
+	<h4><p><I><b>NASA DIYOS ANG AWA NASA TAO ANG GAWA</b></I></p></h4>
+            <p>Mabuhay! Salamat sa pag-aaral ng wikang Tagalog at ng mga aspeto nito. Kami ay handang tumulong sa iyong asignatura at tandaan ang patuloy na pag-ulit ang susi.</p>
+
+<h4><p class=".space"><a href="#"> Kinder </a>
+<a href="#"> Grade 1 </a>
+<a href="#"> Grade 2 </a>
+<a href="#"> Grade 3 </a>
+<a href="#"> Grade 4 </a>
+<a href="#"> Grade 5 </a>
+<a href="#"> Grade 6 </a></p>
+<a href="#"> Grade 7 </a>
+<a href="#"> Grade 8 </a>
+<a href="#"> Grade 9 </a>
+<a href="#"> Grade 10 </a>
+<a href="#"> Grade 11 </a>
+<a href="#"> Grade 12 </a>
+</p><h4>	
+<p><I><b>"Ang kabataan ang pag-asa ng Bayan." Dr. Jose P. Rizal</b></I></p>
+        </li>
+
+<li class="steps-list-item">
+            <h3>History</h3>
+           <h4><p><I><b>"Do not conform to the pattern of this world, but be transformed by the renewing of your mind. Then you will be able to test and approve what God’s will is—his good, pleasing and perfect will." Romans 12:2 </b></I></p></h4>
+	 <p>Welcome to the past. We must know what are we before we became to be. That's what you need to uncover & make sure that you share it to us.</p>
+	
+<h4><p class=".space"><a href="#"> Kinder </a>
+<a href="#"> Grade 1 </a>
+<a href="#"> Grade 2 </a>
+<a href="#"> Grade 3 </a>
+<a href="#"> Grade 4 </a>
+<a href="#"> Grade 5 </a>
+<a href="#"> Grade 6 </a></p>
+<a href="#"> Grade 7 </a>
+<a href="#"> Grade 8 </a>
+<a href="#"> Grade 9 </a>
+<a href="#"> Grade 10 </a>
+<a href="#"> Grade 11 </a>
+<a href="#"> Grade 12 </a>
+</p><h4>	
+
+<p><I><b>George Santayana famously warned, "Those who cannot learn from history are doomed to repeat it,"</b></I></p>
+        </li>
+
+<li class="steps-list-item">
+            <h3>Information & Communication Technology</h3>
+		<h4><p><I><b>The Spirit of the Lord will rest on him— the Spirit of wisdom and of understanding, the Spirit of counsel and of might, the Spirit of the knowledge and fear of the Lord — Isaiah 11:2 </b></I></p></h4>
+            <p>Welcome on your generation. The subject you most likely could relate to. From the internet to the computer science. This subject has a wide variety of subsets that you need to study on.</p>
+	
+<h4><p class=".space"><a href="#"> Kinder </a>
+<a href="#"> Grade 1 </a>
+<a href="#"> Grade 2 </a>
+<a href="#"> Grade 3 </a>
+<a href="#"> Grade 4 </a>
+<a href="#"> Grade 5 </a>
+<a href="#"> Grade 6 </a></p>
+<a href="#"> Grade 7 </a>
+<a href="#"> Grade 8 </a>
+<a href="#"> Grade 9 </a>
+<a href="#"> Grade 10 </a>
+<a href="#"> Grade 11 </a>
+<a href="#"> Grade 12 </a>
+</p><h4>	
+
+<p><I><b>"Your time is limited, so don't waste it living someone else's life," Steve Jobs</b></I></p>
+        </li>
+        <li class="steps-list-item">
+            <h3>Music</h3>
+	<h4><p><I><b>Praise the Lord . How good it is to sing praises to our God, how pleasant and fitting to praise him! Psalms 147:1 </b></I></p></h4>
+            <p>Welcome to your sound subject. The curriculum that makes you excel if you just allow it to flow from your hand movement to your ears and dictates your emotions. I know you like your noise-canceling headphones & playlist but composing is far more rewarding.</p>
+	
+<h4><p class=".space"><a href="#"> Kinder </a>
+<a href="#"> Grade 1 </a>
+<a href="#"> Grade 2 </a>
+<a href="#"> Grade 3 </a>
+<a href="#"> Grade 4 </a>
+<a href="#"> Grade 5 </a>
+<a href="#"> Grade 6 </a></p>
+<a href="#"> Grade 7 </a>
+<a href="#"> Grade 8 </a>
+<a href="#"> Grade 9 </a>
+<a href="#"> Grade 10 </a>
+<a href="#"> Grade 11 </a>
+<a href="#"> Grade 12 </a>
+</p><h4>	
+<p><I><b>"Music can change the world because it can change people." — Ludwig Van Beethoven </b></I></p>
+        </li>
+         <li class="steps-list-item">
+            <h3>Arts</h3>
+<h4><p><I><b>"But seek first his kingdom and his righteousness, and all these things will be given to you as well." Matthew 6:33</b></I></p></h4>
+            <p>Welcome to your visual subject. The subject that you also like & it runs in the family too, both sides. The subject that makes your brain rest from all of the thinking. The subject that can be your outlet in de-stressing. </p>
+	
+<h4><p class=".space"><a href="#"> Kinder </a>
+<a href="#"> Grade 1 </a>
+<a href="#"> Grade 2 </a>
+<a href="#"> Grade 3 </a>
+<a href="#"> Grade 4 </a>
+<a href="#"> Grade 5 </a>
+<a href="#"> Grade 6 </a></p>
+<a href="#"> Grade 7 </a>
+<a href="#"> Grade 8 </a>
+<a href="#"> Grade 9 </a>
+<a href="#"> Grade 10 </a>
+<a href="#"> Grade 11 </a>
+<a href="#"> Grade 12 </a>
+</p><h4>	
+<p><I><b>"Art should comfort the disturbed and disturb the comfortable", "If you get tired, learn to rest, not to quit", and "Nobody ever listened to me until they didn't know who I was" - Banksy</b></I></p>
+        </li>
+         <li class="steps-list-item">
+            <h3>Physical Education</h3>
+	<h4><p><I><b>"but those who hope in the Lord will renew their strength. They will soar on wings like eagles; they will run and not grow weary, they will walk and not be faint." Isaiah 40:31 </b></I></p></h4>
+            <p>Welcome to your muscle's gym. The maintenance for your body. The subject you need on a regular basis to support your other organs from functioning properly.</p>
+
+<h4><p class=".space"><a href="#"> Kinder </a>
+<a href="#"> Grade 1 </a>
+<a href="#"> Grade 2 </a>
+<a href="#"> Grade 3 </a>
+<a href="#"> Grade 4 </a>
+<a href="#"> Grade 5 </a>
+<a href="#"> Grade 6 </a></p>
+<a href="#"> Grade 7 </a>
+<a href="#"> Grade 8 </a>
+<a href="#"> Grade 9 </a>
+<a href="#"> Grade 10 </a>
+<a href="#"> Grade 11 </a>
+<a href="#"> Grade 12 </a>
+</p><h4>	
+<p><I><b>"Champions keep playing until they get it right."</p></I></b>
+        </li>
+<li class="steps-list-item">
+            <h3>Health</h3>
+<h4><p><I><b>"Whatever you do, work at it with all your heart, as working for the Lord, not for human masters, Colossians 3:23 </b></I></p></h4>
+        <p>Welcome to the most important subject. Whether it is mental or physical, a healthy body & well being are the key components of one's well-being. All of us should take it seriously.</p>
+	
+<h4><p class=".space"><a href="#"> Kinder </a>
+<a href="#"> Grade 1 </a>
+<a href="#"> Grade 2 </a>
+<a href="#"> Grade 3 </a>
+<a href="#"> Grade 4 </a>
+<a href="#"> Grade 5 </a>
+<a href="#"> Grade 6 </a></p>
+<a href="#"> Grade 7 </a>
+<a href="#"> Grade 8 </a>
+<a href="#"> Grade 9 </a>
+<a href="#"> Grade 10 </a>
+<a href="#"> Grade 11 </a>
+<a href="#"> Grade 12 </a>
+</p><h4>	
+
+<p><I><b>"Prevention is better than cure"</b></I></p>
+        </li>
+<li class="steps-list-item">
+            <h3>Technology & Livelihood Education</h3>
+ <h4><p><I><b>"Give, and it will be given to you. A good measure, pressed down, shaken together and running over, will be poured into your lap. For with the measure you use, it will be measured to you." -Luke 6:38 </b></I></p></h4>
+      <p>Welcome to your life's education. The subject that will make you realize that experience is the best teacher.</p>
+	
+<h4><p class=".space"><a href="#"> Kinder </a>
+<a href="#"> Grade 1 </a>
+<a href="#"> Grade 2 </a>
+<a href="#"> Grade 3 </a>
+<a href="#"> Grade 4 </a>
+<a href="#"> Grade 5 </a>
+<a href="#"> Grade 6 </a></p>
+<a href="#"> Grade 7 </a>
+<a href="#"> Grade 8 </a>
+<a href="#"> Grade 9 </a>
+<a href="#"> Grade 10 </a>
+<a href="#"> Grade 11 </a>
+<a href="#"> Grade 12 </a>
+</p><h4>	
+
+<p><I><b>"No leader can do it alone. Leadership is not a solo act." </b></I></p><p><I><b>Jaime Augusto Zobel de Ayala</b></I></p>
+        </li>
+
+
+<li class="steps-list-item">
+            <h3>Bible</h3>
+ <h4><p><I><b>"For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life." John 3:16 </b></I></p></h4>
+      <p>Welcome to your faith. Your belief will be tested and mock. That's why this has to be studied by heart. We are with you always and in all ways. Amen.</p>
+	
+<h4><p class=".space"><a href="#"> Kinder </a>
+<a href="#"> Grade 1 </a>
+<a href="#"> Grade 2 </a>
+<a href="#"> Grade 3 </a>
+<a href="#"> Grade 4 </a>
+<a href="#"> Grade 5 </a>
+<a href="#"> Grade 6 </a></p>
+<a href="#"> Grade 7 </a>
+<a href="#"> Grade 8 </a>
+<a href="#"> Grade 9 </a>
+<a href="#"> Grade 10 </a>
+<a href="#"> Grade 11 </a>
+<a href="#"> Grade 12 </a>
+</p><h4>	
+<p><I><b>"If you can't feed a hundred people, then feed just one." </b></I></p><p><I><b>Mother Teresa </b></I></p>
+        </li>
+    </ol>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullscreen Overlay Navbar (Corrected)</title>
+    <style>
+        /*
+        ========================================
+        CSS Custom Properties (Dramatic Theme)
+        ========================================
+        */
+        :root {
+            --color-background: #f9f9f9;
+            --color-text-primary: #111;
+            --color-text-light: #fff;
+            --color-overlay-bg: #1a1a1a;
+            --color-overlay-link-hover: #007bff;
+            
+            --z-index-header: 1000;
+            --z-index-overlay: 1001; /* Must be higher than header */
+
+            --font-family-sans-serif: "Helvetica Neue", Arial, sans-serif;
+            --font-weight-bold: 700;
+            --transition-speed: 0.5s;
+            --transition-curve: cubic-bezier(0.2, 1, 0.3, 1);
+        }
+        
+        *, *::before, *::after { box-sizing: border-box; }
+        html, body { margin: 0; }
+
+        body { font-family: var(--font-family-sans-serif); background-color: var(--color-background); color: var(--color-text-primary); }
+        .content { height: 200vh; max-width: 800px; margin: 0 auto; padding: 100px 1.5rem; }
+        body.fullscreen-menu-is-open { overflow: hidden; }
+
+        .main-header {
+            position: fixed; top: 0; left: 0; width: 100%;
+            z-index: var(--z-index-header); /* Lower z-index */
+            display: flex; justify-content: space-between; align-items: center; padding: 1.5rem;
+        }
+
+        .header__brand { font-weight: var(--font-weight-bold); color: var(--color-text-primary); text-decoration: none; }
+        .icon-button { display: flex; align-items: center; justify-content: center; border: none; background: transparent; padding: 0.5rem; cursor: pointer; color: var(--color-text-primary); }
+        .icon-button svg { width: 32px; height: 32px; }
+        .fullscreen-menu__close-btn { color: var(--color-text-light); }
+        
+        .fullscreen-menu {
+            position: fixed; top: 0; left: 0;
+            z-index: var(--z-index-overlay); /* Higher z-index */
+            width: 100%; height: 100vh; background-color: var(--color-overlay-bg);
+            display: flex; justify-content: center; align-items: center;
+            opacity: 0; visibility: hidden; transform: scale(1.1);
+            transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
+        }
+
+        .fullscreen-menu.is-open { opacity: 1; visibility: visible; transform: scale(1); }
+        .fullscreen-menu__list { text-align: center; list-style: none; margin: 0; padding: 0; }
+        .fullscreen-menu__item { overflow: hidden; }
+        .fullscreen-menu__link {
+            display: inline-block; padding: 0.5rem; font-size: 2.5rem;
+            font-weight: var(--font-weight-bold); color: var(--color-text-light); text-decoration: none;
+            opacity: 0; transform: translateY(100%);
+            transition: opacity var(--transition-speed) var(--transition-curve), 
+                        transform var(--transition-speed) var(--transition-curve),
+                        color 0.2s ease;
+        }
+        .fullscreen-menu__link:hover { color: var(--color-overlay-link-hover); }
+        .fullscreen-menu.is-open .fullscreen-menu__link { opacity: 1; transform: translateY(0); }
+        .fullscreen-menu.is-open .fullscreen-menu__item:nth-child(1) .fullscreen-menu__link { transition-delay: 0.1s; }
+        .fullscreen-menu.is-open .fullscreen-menu__item:nth-child(2) .fullscreen-menu__link { transition-delay: 0.2s; }
+        .fullscreen-menu.is-open .fullscreen-menu__item:nth-child(3) .fullscreen-menu__link { transition-delay: 0.3s; }
+        .fullscreen-menu.is-open .fullscreen-menu__item:nth-child(4) .fullscreen-menu__link { transition-delay: 0.4s; }
+
+        @media (min-width: 768px) { .fullscreen-menu__link { font-size: 4rem; } }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <a href="#" class="header__brand">DesignCo</a>
+        <button class="icon-button" id="menu-toggle-btn" aria-label="Open menu" aria-haspopup="true" aria-controls="fullscreen-menu" aria-expanded="false">
+            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+        </button>
+    </header>
+
+    <nav class="fullscreen-menu" id="fullscreen-menu" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="menu-label">
+        <span id="menu-label" class="visually-hidden">Main Menu</span>
+        <button class="icon-button fullscreen-menu__close-btn" id="menu-close-btn" aria-label="Close menu" style="position: absolute; top: 1.5rem; right: 1.5rem;">
+            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+        </button>
+        <ul class="fullscreen-menu__list">
+            <li class="fullscreen-menu__item"><a href="#" class="fullscreen-menu__link">Work</a></li>
+            <li class="fullscreen-menu__item"><a href="#" class="fullscreen-menu__link">About</a></li>
+            <li class="fullscreen-menu__item"><a href="#" class="fullscreen-menu__link">Journal</a></li>
+            <li class="fullscreen-menu__item"><a href="#" class="fullscreen-menu__link">Contact</a></li>
+        </ul>
+    </nav>
+    <main class="content">
+        <h1>Fullscreen Overlay Navbar</h1>
+        <p>This page features a dramatic, fullscreen navigation menu. Click the hamburger icon in the top right to activate it.</p>        
+    </main>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggleBtn = document.getElementById('menu-toggle-btn');
+        const menuCloseBtn = document.getElementById('menu-close-btn');
+        const menu = document.getElementById('fullscreen-menu');
+        const menuLinks = menu.querySelectorAll('.fullscreen-menu__link'); // Get all links
+        
+        if (!menuToggleBtn || !menuCloseBtn || !menu) return;
+
+        let lastActiveElement;
+        const focusableElements = menu.querySelectorAll('a[href], button');
+        const firstFocusableElement = focusableElements[0];
+        const lastFocusableElement = focusableElements[focusableElements.length - 1];
+        
+        function openMenu() { /* Unchanged */
+            lastActiveElement = document.activeElement;
+            document.body.classList.add('fullscreen-menu-is-open');
+            menu.classList.add('is-open');
+            menu.setAttribute('aria-hidden', 'false');
+            menuToggleBtn.setAttribute('aria-expanded', 'true');
+            firstFocusableElement.focus();
+        }
+
+        function closeMenu() { /* Unchanged */
+            document.body.classList.remove('fullscreen-menu-is-open');
+            menu.classList.remove('is-open');
+            menu.setAttribute('aria-hidden', 'true');
+            menuToggleBtn.setAttribute('aria-expanded', 'false');
+            if (lastActiveElement) { lastActiveElement.focus(); }
+        }
+        
+        // --- Event Listeners ---
+        menuToggleBtn.addEventListener('click', openMenu);
+        menuCloseBtn.addEventListener('click', closeMenu);
+        
+        // Add a listener to each menu link to close the menu on click
+        menuLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && menu.classList.contains('is-open')) closeMenu(); });
+        
+        menu.addEventListener('keydown', (e) => { 
+            if (e.key !== 'Tab') return;
+            if (e.shiftKey) { if (document.activeElement === firstFocusableElement) { lastFocusableElement.focus(); e.preventDefault(); }
+            } else { if (document.activeElement === lastFocusableElement) { firstFocusableElement.focus(); e.preventDefault(); } }
+        });
+    });
+    </script>
+    <style>.visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }</style>
+</body>
+</html>
